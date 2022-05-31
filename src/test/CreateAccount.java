@@ -1,3 +1,7 @@
+package test;
+
+import model.Account;
+
 public class CreateAccount {
 
     public static void main(String[] args) {

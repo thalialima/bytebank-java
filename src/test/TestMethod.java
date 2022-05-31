@@ -1,3 +1,6 @@
+package test;
+
+import model.Account;
 
 public class TestMethod {
     public static void main(String[] args) {
