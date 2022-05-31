@@ -10,7 +10,7 @@ public class Manager extends Employee {
     }
 
     public double getBonus() {
-            return this.wage;
+            return super.getBonus() + super.getWage();
     }
 
     public void setPassword(int password){

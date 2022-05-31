@@ -4,10 +4,14 @@ public class Employee {
 
     private String name;
     private String CPF;
-    protected double wage;
+    private double wage;
 
     public String getName() {
         return name;
+    }
+
+    public double getBonus() {
+        return this.wage * 0.05;
     }
 
     public void setName(String name) {
