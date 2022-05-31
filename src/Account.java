@@ -3,7 +3,7 @@ public class Account {
     private int branch;
     private int number;
     private Client holder = new Client();
-    private static int total;
+    private static int total = 0;
 
     public Account() {
 
@@ -12,6 +12,8 @@ public class Account {
         this.branch = branch;
         this.number = number;
         Account.total++;
+        System.out.println("O total de contas é: " + Account.total);
+        System.out.println("Estou criando a conta: " + this.number);
     }
 
     public double getBalance() {
