@@ -1,20 +1,20 @@
 package model;
 
-import model.Employee;
+public class Manager extends Employee implements Authenticable {
 
-public class Manager extends Employee {
-    private int password;
-
-    public boolean authenticate(int password) {
-        return this.password == password;
-    }
+    private int passsword;
 
     public double getBonus() {
             return super.getWage();
     }
 
-    public void setPassword(int password){
-        this.password = password;
+    @Override
+    public void setPassword(int password) {
+        this.passsword = password;
     }
 
+    @Override
+    public boolean authenticate(int password) {
+        return this.passsword == password;
+    }
 }

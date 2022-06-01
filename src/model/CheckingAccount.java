@@ -5,6 +5,10 @@ public class CheckingAccount extends Account {
         super(branch, number);
     }
 
+    public CheckingAccount() {
+
+    }
+
     @Override
     public boolean withdraw(double value) {
         return super.withdraw(value + 0.1);

@@ -1,9 +1,15 @@
 package model;
 
-public class SavingsAccount extends Account{
+import java.security.PublicKey;
+
+public class SavingsAccount extends Account {
 
     public SavingsAccount(int branch, int number) {
         super(branch, number);
+    }
+
+    public SavingsAccount() {
+
     }
 
     @Override

@@ -1,9 +1,11 @@
 package model;
 
-public class Client {
+public class Client implements Authenticable {
     private String name;
     private String CPF;
     private int age;
+
+    private int password;
 
     public String getName() {
         return name;
@@ -27,5 +29,15 @@ public class Client {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public void setPassword(int password) {
+        this.password = password;
+    }
+
+    @Override
+    public boolean authenticate(int password) {
+        return this.password == password;
     }
 }
