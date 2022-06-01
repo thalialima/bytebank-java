@@ -5,7 +5,11 @@ public class Client implements Authenticable {
     private String CPF;
     private int age;
 
-    private int password;
+    private final AuthenticationUtil authentication;
+
+    public Client(){
+        this.authentication = new AuthenticationUtil();
+    }
 
     public String getName() {
         return name;
@@ -33,11 +37,11 @@ public class Client implements Authenticable {
 
     @Override
     public void setPassword(int password) {
-        this.password = password;
+        this.authentication.setPassword(password);
     }
 
     @Override
     public boolean authenticate(int password) {
-        return this.password == password;
+        return this.authentication.getPassword() == password;
     }
 }

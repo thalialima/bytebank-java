@@ -1,6 +1,7 @@
 package model;
 
-public class CheckingAccount extends Account {
+public class CheckingAccount extends Account implements Taxable {
+
     public CheckingAccount(int branch, int number) {
         super(branch, number);
     }
@@ -18,5 +19,10 @@ public class CheckingAccount extends Account {
     public void deposit(double value) {
         double balance = super.getBalance();
         super.setBalance(balance + value);
+    }
+
+    @Override
+    public double getTaxValue() {
+        return super.getBalance() * 0.1;
     }
 }

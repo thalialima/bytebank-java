@@ -2,7 +2,11 @@ package model;
 
 public class Manager extends Employee implements Authenticable {
 
-    private int passsword;
+    private final AuthenticationUtil authentication;
+
+    public Manager() {
+        this.authentication = new AuthenticationUtil();
+    }
 
     public double getBonus() {
             return super.getWage();
@@ -10,11 +14,11 @@ public class Manager extends Employee implements Authenticable {
 
     @Override
     public void setPassword(int password) {
-        this.passsword = password;
+        this.authentication.setPassword(password);
     }
 
     @Override
     public boolean authenticate(int password) {
-        return this.passsword == password;
+        return this.authentication.getPassword() == password;
     }
 }

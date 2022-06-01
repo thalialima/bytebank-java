@@ -1,18 +1,25 @@
 package model;
 
-public class Director extends Employee {
-    private int password;
+public class Director extends Employee implements Authenticable {
 
+    private final AuthenticationUtil authentication;
+
+    public Director(){
+        this.authentication = new AuthenticationUtil();
+    }
+
+    @Override
     public boolean authenticate(int password) {
-        return this.password == password;
+        return this.authentication.getPassword() == password;
     }
 
     public double getBonus() {
-            return super.getWage() + 100;
+        return super.getWage() + 100;
     }
 
-    public void setPassword(int password){
-        this.password = password;
+    @Override
+    public void setPassword(int password) {
+        this.authentication.setPassword(password);
     }
 
 }
