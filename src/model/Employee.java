@@ -1,6 +1,6 @@
 package model;
 
-public class Employee {
+public abstract class Employee {
 
     private String name;
     private String CPF;
@@ -10,9 +10,7 @@ public class Employee {
         return name;
     }
 
-    public double getBonus() {
-        return this.wage * 0.05;
-    }
+    public abstract double getBonus();
 
     public void setName(String name) {
         this.name = name;

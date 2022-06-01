@@ -1,6 +1,6 @@
 package model;
 
-public class Account {
+public abstract class Account {
     private double balance;
     private int branch;
     private int number;
@@ -49,9 +49,7 @@ public class Account {
         this.balance -= value;
         return true;
     }
-    public void deposit(double value) {
-        this.balance += value;
-    }
+    public abstract void deposit(double value);
     public boolean transfer(double value, Account toAccount) {
         if(!this.withdraw(value))
             return false;

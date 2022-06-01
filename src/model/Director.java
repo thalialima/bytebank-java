@@ -8,7 +8,7 @@ public class Director extends Employee {
     }
 
     public double getBonus() {
-            return super.getBonus() + super.getWage() + 100;
+            return super.getWage() + 100;
     }
 
     public void setPassword(int password){
